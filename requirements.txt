@@ -1,0 +1,4 @@
+# LlamaParse Document Converter Requirements
+llama-parse>=0.6.0
+python-dotenv>=1.0.0
+nest-asyncio>=1.5.0 
