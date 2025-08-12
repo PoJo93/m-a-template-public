@@ -179,7 +179,7 @@ class DocumentConverter:
             api_key=self.api_key,
             result_type="markdown",
             verbose=True,
-            auto_mode=True,  # Automatically choose best parsing mode for each document
+            parse_mode="parse_page_with_agent",
         )
         logger.info("LlamaParse initialized")
         
@@ -200,7 +200,7 @@ class DocumentConverter:
             use_premium = self.should_use_premium_parsing(file_path)
             parser_to_use = self.premium_parser if use_premium else self.parser
             
-            parsing_type = "premium" if use_premium else "auto"
+            parsing_type = "premium" if use_premium else "agentic"
             logger.info(f"Processing ({parsing_type}): {file_path}")
             
             # Parse the document
